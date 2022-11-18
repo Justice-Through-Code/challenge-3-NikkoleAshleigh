@@ -54,4 +54,26 @@ def stock_purchases():
     print(f'{client_name} has ${to_invest} to invest and can buy {num_stocks} shares of {stock_name} at the current price of ${stocks}.')
 
     
-# stock_purchases()
+stock_purchases()
+
+# I am writing a dictionary to simplify this page of code by using a dictionary
+def buy_stocks():
+
+    stocks = {
+        'amazon' : '3000',
+        'apple' : '100',
+        'fb' : '250',
+        'google' : '1400',
+        'msft' : '200',
+    }
+
+    client_name = input('What is your name? ')
+    to_invest = int(input(f'How much would you like to invest? $'))
+    stock_name = input("\nWhich stock are you interested in? Enter the full name:\nAmazon\nApple\nFacebook\nGoogle\nMicrosoft\nStock Name: ")
+
+    for stock in stocks:
+        if stock == stock_name:
+            num_stock = int(to_invest / stocks[stock])
+            print(f'{client_name} has ${to_invest} to invest and can buy {num_stock} shares of {stock_name} at the current price of ${stocks[stock]}.')
+
+buy_stocks()
